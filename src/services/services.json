@@ -1,0 +1,14 @@
+{"servicos": [
+    {
+        "user_id": 1,
+        "cliente": "cliente 2",
+        "carro": "gol branco",
+        "data_inicio": "2023-04-17",
+        "hora_inicio": "16:10",
+        "data_termino": "2023-04-17",
+        "hora_termino": "11:00",
+        "pecas": [{
+            "peca_id": 1
+        }]
+    }
+]}

@@ -5,7 +5,10 @@ function Home() {
   return (
     <>
       <Header />
-      <h1>Home</h1>
+      <div className="page">
+        <h1>Home</h1>
+        <p>Processo seletivo Ultracar</p>
+      </div>
     </>
   );
 }

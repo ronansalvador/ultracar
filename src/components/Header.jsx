@@ -10,7 +10,7 @@ function Header() {
       </Link>
       <ul>
         <li><Link to="/startservice">Iniciar Serviço</Link></li>
-        <li><Link to="/teste">link2</Link></li>
+        <li><Link to="/services">Serviços</Link></li>
         <li><Link to="/teste">link3</Link></li>
       </ul>
     </header>

@@ -1,37 +1,79 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Header from '../components/Header';
 import Context from '../context/Context';
 import QRCodeComponent from '../components/QRCodeComponent';
 
 function StartService() {
-  const { user } = useContext(Context);
+  const { technical, createServices, pieces } = useContext(Context);
   const [cliente] = useState('Ronan');
   const [carro] = useState('Corolla');
   const [starDate, setStartDate] = useState('');
   const [starHour, setStartHour] = useState('');
   const [endDate, setEndDate] = useState('');
   const [endHour, setEndHour] = useState('');
-  console.log(user.nome, cliente, carro, starDate, endDate, starHour);
+  const [selectedValue, setSelectedValue] = useState('');
+  const [technicalId, setTechnicalId] = useState(1);
+  const [selectedPiece, setSelectedPiece] = useState('');
+  const [pieceId, setPieceId] = useState('');
+  const [servicePieces, setServicePieces] = useState([]);
+  console.log(user.nome, cliente, carro, starDate, endDate, starHour, pieceId);
 
   const startServiceValidate = () => {
-    console.log('iniciar atendimento');
+    // console.log('iniciar atendimento');
     const newService = {
-      user: user.id,
-      cliente,
+      user_id: technicalId,
       carro,
-      starDate,
-      starHour,
-      endDate,
-      endHour,
+      cliente,
+      data_inicio: starDate,
+      hora_inicio: starHour,
+      data_termino: endDate,
+      hora_termino: endHour,
+      pecas: servicePieces,
     };
-
     console.log(newService);
+    createServices(newService);
   };
+
+  function handleTechnicalId(event) {
+    console.log(event.target);
+    setSelectedValue(event.target.value);
+    const { selectedIndex } = event.target.options;
+    console.log('selectedIndex', selectedIndex);
+    const selectedOption = event.target.options[selectedIndex];
+    const selectedId = selectedOption.getAttribute('id');
+    console.log('Id selecionado:', selectedId);
+    setTechnicalId(parseInt(selectedId, 10));
+  }
+
+  function handlePiecelId(event) {
+    console.log(event.target);
+    setSelectedPiece(event.target.value);
+    const { selectedIndex } = event.target.options;
+    console.log('selectedIndex', selectedIndex);
+    const selectedOption = event.target.options[selectedIndex];
+    const selectedId = selectedOption.getAttribute('id');
+    console.log('Id selecionado:', selectedId);
+    setPieceId(selectedId);
+  }
+
+  const addPiece = () => {
+    const piece = {
+      peca_id: pieceId,
+      nome: selectedPiece,
+    };
+    const pecas = servicePieces;
+    pecas.push(piece);
+    setServicePieces(pecas);
+  };
+
+  useEffect(() => {
+    console.log('alterou as pecas');
+  }, [servicePieces]);
 
   return (
     <>
       <Header />
-      <div className="start-service-page">
+      <div className="page">
         <h1>Iniciar serviço</h1>
         <QRCodeComponent cliente={ cliente } carro={ carro } />
         <label htmlFor="start-date">
@@ -62,6 +104,48 @@ function StartService() {
           type="time"
           onChange={ ({ target }) => setEndHour(target.value) }
         />
+        <label htmlFor="start-date">
+          Responsavel
+        </label>
+        <select value={ selectedValue } onChange={ handleTechnicalId }>
+          {
+            technical.map((item) => (
+              <option
+                id={ item.id }
+                key={ item.id }
+                value={ item.nome }
+              >
+                {item.nome}
+
+              </option>
+            ))
+          }
+        </select>
+        <select value={ selectedPiece } onChange={ handlePiecelId }>
+          {
+            pieces.map((item) => (
+              <option
+                id={ item.id }
+                key={ item.id }
+                value={ item.nome }
+              >
+                {item.nome}
+
+              </option>
+            ))
+          }
+        </select>
+        <button
+          type="button"
+          onClick={ addPiece }
+        >
+          Adicionar peça
+        </button>
+        {servicePieces.length > 0
+          ? servicePieces.map((peca, index) => (
+            <p key={ index }>{peca.nome}</p>
+          ))
+          : <p>Serviço sem peças.</p>}
         <button
           type="button"
           onClick={ startServiceValidate }

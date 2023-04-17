@@ -3,5 +3,11 @@
         "id": 1,
         "nome": "Ronan",
         "cargo": "tecnico"
+    },
+
+    {
+        "id": 2,
+        "nome": "Fernando",
+        "cargo": "tecnico"
     }
 ]
