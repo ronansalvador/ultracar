@@ -1,0 +1,21 @@
+.menu {
+    background-color: red;
+    display: flex;
+    align-items: center;
+    height: 85px;
+}
+
+.menu img {
+    height: 100px;
+}
+
+.menu ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 80%;
+}
+
+.menu ul li a {
+    text-decoration: none;
+}
