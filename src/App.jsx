@@ -1,9 +1,13 @@
+import { Routes, Route } from 'react-router-dom';
+import StartService from "./pages/StartService";
 function App() {
 
 
   return (
     <>
-      <h1>Ultracar</h1>
+      <Routes>
+          <Route path="/" element={ <StartService /> } />
+        </Routes>
     </>
   )
 }
