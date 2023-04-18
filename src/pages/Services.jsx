@@ -7,7 +7,6 @@ import Footer from '../components/Footer';
 
 function Services() {
   const { services } = useContext(Context);
-  console.log(services);
   return (
     <>
       <Header />
