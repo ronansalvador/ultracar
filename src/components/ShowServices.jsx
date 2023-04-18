@@ -6,10 +6,10 @@ function ShowServices({ services }) {
         <tr>
           <th>Cliente</th>
           <th>Carro</th>
-          <th>Data inicio</th>
-          <th>Hora inicio</th>
-          <th>Data termino</th>
-          <th>Hora termino</th>
+          <th>Data de início</th>
+          <th>Horário de início</th>
+          <th>Data de término</th>
+          <th>Horário de término</th>
           <th>Peças</th>
         </tr>
       </thead>
