@@ -31,7 +31,6 @@ function StartService() {
       hora_termino: endHour,
       pecas: servicePieces,
     };
-    console.log(newService);
     createServices(newService);
     navigate('/services');
   };
@@ -43,15 +42,11 @@ function StartService() {
       nome: selectedPiece,
       valor: pieceValue[0]?.valor || 0,
     };
-    // const pecas = servicePieces;
-    // pecas.push(piece);
-      // Crie uma nova cópia do estado anterior e adicione o novo item
+
     const newPecas = [...servicePieces, piece];
 
-    // Atualize o estado com a nova cópia
     setServicePieces(newPecas);
-    // setServicePieces(pecas);
-    console.log('atualizou');
+
   };
 
   const validateService = () => {
@@ -60,17 +55,6 @@ function StartService() {
   useEffect(() => {
     validateService();
   }, [starDate, starHour, endDate, endHour]);
-
-  // const renderPieces = () => (
-  //   servicePieces
-  //     && servicePieces.map((peca, index) => (
-  //       <p
-  //         key={ index }
-  //       >
-  //         {`${peca.nome} - R$:${parseFloat(peca.valor).toFixed(2)}`}
-
-  //       </p>
-  //     )));
 
   return (
     <>
@@ -86,12 +70,14 @@ function StartService() {
           <input
             id="start-date"
             type="date"
+            placeholder='data de inicio'
             onChange={ ({ target }) => setStartDate(target.value) }
           />
           <label htmlFor="start-hour">hora de inicio</label>
           <input
             id="start-hour"
             type="time"
+            placeholder='start-hour'
             onChange={ ({ target }) => setStartHour(target.value) }
           />
           <label htmlFor="start-date">
@@ -100,12 +86,14 @@ function StartService() {
           <input
             id="end-date"
             type="date"
+            placeholder='data de termino'
             onChange={ ({ target }) => setEndDate(target.value) }
           />
           <label htmlFor="start-hour">horario termino</label>
           <input
             id="end-hour"
             type="time"
+            placeholder='end-hour'
             onChange={ ({ target }) => setEndHour(target.value) }
           />
           <label htmlFor="start-date">
