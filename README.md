@@ -24,4 +24,7 @@
   npm start
 ```
 
-#teste
+## Executanto os testes
+```bash
+  npm run test
+```
