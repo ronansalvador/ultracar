@@ -73,7 +73,7 @@ function StartService() {
         <form>
 
           <label htmlFor="start-date">
-            Data de inicio
+            Data de início
           </label>
           <input
             id="start-date"
@@ -81,7 +81,7 @@ function StartService() {
             placeholder='data de inicio'
             onChange={ ({ target }) => setStartDate(target.value) }
           />
-          <label htmlFor="start-hour">hora de inicio</label>
+          <label htmlFor="start-hour">Horário de início</label>
           <input
             id="start-hour"
             type="time"
@@ -89,7 +89,7 @@ function StartService() {
             onChange={ ({ target }) => setStartHour(target.value) }
           />
           <label htmlFor="start-date">
-            Termino
+            Data de término
           </label>
           <input
             id="end-date"
@@ -97,7 +97,7 @@ function StartService() {
             placeholder='data de termino'
             onChange={ ({ target }) => setEndDate(target.value) }
           />
-          <label htmlFor="start-hour">horario termino</label>
+          <label htmlFor="start-hour">Horário de término</label>
           <input
             id="end-hour"
             type="time"
@@ -105,7 +105,7 @@ function StartService() {
             onChange={ ({ target }) => setEndHour(target.value) }
           />
           <label htmlFor="start-date">
-            Responsavel
+            Responsável
           </label>
           <Select
             setSelected={ setSelectedValue }
