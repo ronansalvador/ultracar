@@ -14,8 +14,8 @@ function ShowServices({ services }) {
         </tr>
       </thead>
       <tbody>
-        {services && (services.map((servico) => (
-          <tr key={ servico.id }>
+        {services && (services.map((servico, index) => (
+          <tr key={ index }>
             <td>{servico.cliente || 'não informado'}</td>
             <td>{servico.carro || 'não informado'}</td>
             <td>{servico.data_inicio}</td>
