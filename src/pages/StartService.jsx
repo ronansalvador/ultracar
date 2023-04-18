@@ -113,6 +113,9 @@ function StartService() {
             options={ technical }
             setId={ setTechnicalId }
           />
+          <label htmlFor="start-date">
+            Peças
+          </label>
           <Select
             setSelected={ setSelectedPiece }
             value={ selectedPiece }
