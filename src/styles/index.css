@@ -87,3 +87,7 @@ button:disabled {
 span {
   color: red
 }
+
+h3 {
+  padding: 10px;
+}
