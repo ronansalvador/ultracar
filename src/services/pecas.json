@@ -1,12 +1,17 @@
 [
     {
         "id": 1,
-        "nome": "peça1",
-        "valor": 50
+        "nome": "Pastilha de freio",
+        "valor": 130
     },
     {
         "id": 2,
-        "nome": "peça2",
-        "valor": 60
+        "nome": "Disco de freio",
+        "valor": 160
+    },
+    {
+        "id": 3,
+        "nome": "Bateria",
+        "valor": 310
     }
 ]

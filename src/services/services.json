@@ -4,19 +4,19 @@
         "cliente": "Jonathan",
         "carro": "Creta preto",
         "data_inicio": "2023-04-17",
-        "hora_inicio": "16:10",
+        "hora_inicio": "10:10",
         "data_termino": "2023-04-17",
-        "hora_termino": "11:00",
+        "hora_termino": "14:00",
         "pecas": [{
             "peca_id": 1,
-            "nome": "peça1",
-            "valor": 50
+            "nome": "Pastilha de freio",
+            "valor": 130
         },
         {
 
         "peca_id": 2,
-        "nome": "peça2",
-        "valor": 60
+        "nome": "Disco de freio",
+        "valor": 160
         }
     
     ]
@@ -31,8 +31,8 @@
         "hora_termino": "13:00",
         "pecas": [{
             "peca_id": 1,
-            "nome": "peça1",
-            "valor": 50
+            "nome": "Pastilha de freio",
+            "valor": 130
         }
     
     ]
