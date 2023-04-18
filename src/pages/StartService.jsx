@@ -14,7 +14,7 @@ function StartService() {
   const [endHour, setEndHour] = useState('');
   const [selectedValue, setSelectedValue] = useState('');
   const [technicalId, setTechnicalId] = useState(1);
-  const [selectedPiece, setSelectedPiece] = useState('peça1');
+  const [selectedPiece, setSelectedPiece] = useState('Pastilha de freio');
   const [pieceId, setPieceId] = useState('');
   const [servicePieces, setServicePieces] = useState([]);
   const [validService, setValidService] = useState(false);
@@ -50,7 +50,15 @@ function StartService() {
   };
 
   const validateService = () => {
-    setValidService(starDate && starHour && endDate && endHour);
+    const inicio = new Date(`${starDate}T${starHour}`);
+    console.log(inicio);
+    const termino = new Date(`${endDate}T${endHour}`);
+    if (termino.getTime() < inicio.getTime()) {
+      alert('A data de término deve ser posterior à data de início.');
+    } else {
+      setValidService(starDate && starHour && endDate && endHour);
+    }
+    
   };
   useEffect(() => {
     validateService();
@@ -121,6 +129,7 @@ function StartService() {
             && servicePieces.map((peca, index) => (
               <p
                 key={ index }
+                className='pieces'
               >
                 {`${peca.nome} - R$:${parseFloat(peca.valor).toFixed(2)}`}
 
